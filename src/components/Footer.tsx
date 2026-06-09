@@ -1,132 +1,84 @@
 import {
-  TestTube2,
   MapPin,
   Phone,
-  Mail,
-  Award,
-  CheckCircle2,
+  Instagram,
+  Facebook,
+  Linkedin
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
-    <footer className="bg-mattos-dark text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
-          {/* Column 1: Info */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="bg-white/10 p-2 rounded-lg">
-                <TestTube2 className="h-6 w-6 text-mattos-highlight" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold leading-none">
-                  Laboratório Mattos
-                </span>
-                <span className="text-xs text-white/70">Mattos & Mattos</span>
-              </div>
-            </Link>
+    <footer className="bg-[#333333] pt-12 flex flex-col font-sans">
+      <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 lg:gap-8 mb-10">
 
-            <div className="space-y-4 text-gray-300">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-mattos-highlight shrink-0 mt-1" />
-                <p>
-                  Rua Euzébio de Queiros, 45
-                  <br />
-                  Centro, Niterói / RJ
-                </p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-mattos-highlight shrink-0" />
-                <p>(21) 2717-1234 / (21) 99999-8888</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-mattos-highlight shrink-0" />
-                <p>contato@laboratoriomattos.com.br</p>
-              </div>
+          {/* Column 1: Logo & Socials */}
+          <div className="flex flex-col items-center lg:items-start space-y-4">
+            <Link to="/" className="inline-block">
+              <img
+                src="/assets/logo_mattos.png"
+                alt="Laboratório Mattos"
+                className="h-16 w-auto object-contain filter brightness-0 invert"
+              />
+            </Link>
+            <div className="flex gap-4 pt-1">
+              <a href="https://www.instagram.com/labmattos/" target="_blank" rel="noopener noreferrer" className="bg-white text-[#333333] p-2.5 rounded-full hover:scale-105 hover:bg-gray-100 transition-all shadow-sm flex items-center justify-center">
+                <Instagram className="h-[1.2rem] w-[1.2rem] stroke-[2.5]" />
+              </a>
+              <a href="https://www.facebook.com/labmattos/mentions/" target="_blank" rel="noopener noreferrer" className="bg-white text-[#333333] p-2.5 rounded-full hover:scale-105 hover:bg-gray-100 transition-all shadow-sm flex items-center justify-center">
+                <Facebook className="h-[1.2rem] w-[1.2rem] stroke-[2.5]" />
+              </a>
+              <a href="https://www.linkedin.com/company/grupo-mattos-e-mattos/" target="_blank" rel="noopener noreferrer" className="bg-white text-[#333333] p-2.5 rounded-full hover:scale-105 hover:bg-gray-100 transition-all shadow-sm flex items-center justify-center">
+                <Linkedin className="h-[1.2rem] w-[1.2rem] stroke-[2.5]" />
+              </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-bold border-b border-white/20 pb-2 inline-block">
-              Links Rápidos
+          {/* Column 2: Contact Info */}
+          <div className="flex flex-col space-y-3 max-w-md lg:ml-8">
+            <h3 className="text-[#32CD32] font-bold text-lg mb-1">
+              Rio de Janeiro
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/"
-                  className="text-gray-300 hover:text-mattos-highlight transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/#sobre"
-                  className="text-gray-300 hover:text-mattos-highlight transition-colors"
-                >
-                  Quem Somos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/servicos"
-                  className="text-gray-300 hover:text-mattos-highlight transition-colors"
-                >
-                  Nossos Serviços
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contato"
-                  className="text-gray-300 hover:text-mattos-highlight transition-colors"
-                >
-                  Fale Conosco
-                </Link>
-              </li>
-            </ul>
+            <div className="flex items-start gap-3">
+              <MapPin className="h-5 w-5 text-[#32CD32] shrink-0 mt-0.5" />
+              <p className="text-white text-sm leading-snug">
+                Rua Euzébio de Queiros, 45 - Centro,<br />
+                Niterói / RJ
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-[#32CD32] shrink-0 mt-0.5 flex-none" />
+              <p className="text-white text-sm leading-snug">
+                (21) 2613-1636 / (21) 2622-8163 / (11)<br />3237-5026
+              </p>
+            </div>
           </div>
 
           {/* Column 3: Certifications */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-bold border-b border-white/20 pb-2 inline-block">
-              Certificações e Qualidade
-            </h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Compromisso com a excelência e conformidade com as principais
-              normas do setor.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center gap-2 bg-white/10 p-3 rounded hover:bg-white/20 transition-colors">
-                <Award className="h-5 w-5 text-mattos-highlight" />
-                <span className="font-semibold text-sm">CPA 1000</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 p-3 rounded hover:bg-white/20 transition-colors">
-                <CheckCircle2 className="h-5 w-5 text-mattos-highlight" />
-                <span className="font-semibold text-sm">ABNT</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 p-3 rounded hover:bg-white/20 transition-colors">
-                <CheckCircle2 className="h-5 w-5 text-mattos-highlight" />
-                <span className="font-semibold text-sm">INEA</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 p-3 rounded hover:bg-white/20 transition-colors">
-                <CheckCircle2 className="h-5 w-5 text-mattos-highlight" />
-                <span className="font-semibold text-sm">REBLAS</span>
-              </div>
-            </div>
+          <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8 flex-1">
+            <img src="/assets/abnt.png" alt="CRL 1000" className="h-[4.5rem] w-auto object-contain" />
+            <img src="/assets/abnt2.png" alt="ABNT" className="h-16 w-auto object-contain" />
+            <img src="/assets/inea.png" alt="INEA" className="h-[2.5rem] w-auto object-contain" />
+            <img src="/assets/reblas.png" alt="REBLAS" className="h-[2.5rem] w-auto object-contain" />
           </div>
-        </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400 text-center md:text-left">
-            &copy; {new Date().getFullYear()} Laboratório Mattos. Todos os
-            direitos reservados.
+        </div>
+      </div>
+
+      {/* Bottom Black Bar */}
+      <div className="bg-black py-4 mt-auto">
+        <div className="container mx-auto px-4 lg:px-8 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p className="text-white text-xs font-medium">
+            Todos os direitos reservados ao Laboratório Mattos & Mattos.
           </p>
-          <p className="text-xs text-gray-500">
-            Desenvolvido por{' '}
-            <span className="font-semibold text-gray-400">Groba Tech</span>
-          </p>
+          <a href="https://wa.me/5521972706086" target="_blank" rel="noopener noreferrer" className="flex items-center hover:opacity-90 transition-all bg-white/95 px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
+            <img
+              src="/assets/groba.png"
+              alt="Groba Tech"
+              className="h-5 w-auto object-contain"
+            />
+          </a>
         </div>
       </div>
     </footer>

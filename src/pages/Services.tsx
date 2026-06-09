@@ -14,10 +14,15 @@ import {
   Leaf,
   Ruler,
 } from 'lucide-react'
+import { SEO } from '@/components/SEO'
 
 export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 pb-20">
+      <SEO
+        title="Catálogo de Serviços | Laboratório Mattos"
+        description="Análises microbiológicas de água e ar, segurança alimentar, projetos de arquitetura clínica e consultoria avançada de qualidade."
+      />
       {/* Header Banner */}
       <section className="bg-mattos-primary py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">

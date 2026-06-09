@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { useToast } from '@/hooks/use-toast'
+import { SEO } from '@/components/SEO'
 
 const formSchema = z.object({
   name: z
@@ -49,17 +50,11 @@ export default function Contact() {
     try {
       console.log('Sending data to webhook...', values)
 
-      // Simulate network delay
+      // Simulando o envio (fake loading de 1.5s)
       await new Promise((resolve) => setTimeout(resolve, 1500))
 
-      // Placeholder for actual fetch call
-      /*
-      await fetch('https://your-webhook-url.com/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      })
-      */
+      // Aqui entraria a chamada de API futura para um serviço de e-mail (Ex: Formspree)
+      // await fetch('/api/contato', { ... })
 
       toast({
         title: 'Mensagem enviada com sucesso!',
@@ -81,6 +76,10 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
+      <SEO
+        title="Fale Conosco | Laboratório Mattos"
+        description="Entre em contato com o Laboratório Mattos. Endereço: Rua Euzébio de Queiros, Niterói - RJ. Telefone e suporte direto por mensagem."
+      />
       {/* Header Banner */}
       <section className="bg-mattos-primary py-20 pb-32">
         <div className="container mx-auto px-4 text-center">
@@ -116,7 +115,7 @@ export default function Contact() {
                     <p className="text-sm text-gray-600">
                       Rua Euzébio de Queiros, 45
                       <br />
-                      Centro, Niterói / RJ
+                      Centro – Niterói – RJ
                     </p>
                   </div>
                 </div>
@@ -128,9 +127,9 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-mattos-dark">Telefone</h4>
                     <p className="text-sm text-gray-600">
-                      (21) 2717-1234
+                      (021) 2613-1636
                       <br />
-                      (21) 99999-8888
+                      (021) 2622-8163
                     </p>
                   </div>
                 </div>
@@ -142,32 +141,24 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-mattos-dark">E-mail</h4>
                     <p className="text-sm text-gray-600 break-all">
-                      contato@laboratoriomattos.com.br
+                      comercial@laboratoriomattos.com.br
                     </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Mock Map */}
+            {/* Real Google Map */}
             <div className="rounded-lg overflow-hidden shadow-lg h-[300px] border bg-gray-200 relative group">
-              {/* Using a static map image placeholder with a pin */}
-              <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
-                <img
-                  src="https://img.usecurling.com/p/600/400?q=map%20niteroi&color=gray"
-                  alt="Mapa de Localização"
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-                <div className="absolute flex flex-col items-center">
-                  <MapPin
-                    className="h-10 w-10 text-red-600 drop-shadow-md animate-bounce"
-                    fill="currentColor"
-                  />
-                  <span className="bg-white px-2 py-1 rounded text-xs font-bold shadow-md mt-1">
-                    Laboratório Mattos
-                  </span>
-                </div>
-              </div>
+              <iframe
+                src="https://storage.googleapis.com/maps-solutions-qn5wppftcb/locator-plus/ogxp/locator-plus.html"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                title="Localização do Laboratório Mattos"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
             </div>
           </div>
 
